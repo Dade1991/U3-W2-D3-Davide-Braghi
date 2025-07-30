@@ -6,4 +6,5 @@
   object-fit: cover !important;
   width: 180px !important;
   height: 300px !important;
+  cursor: pointer;
 }

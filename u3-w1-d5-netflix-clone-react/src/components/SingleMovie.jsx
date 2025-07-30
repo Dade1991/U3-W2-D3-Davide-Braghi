@@ -1,8 +1,10 @@
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useNavigate } from "react-router-dom"
 
 const SingleMovie = ({ movieCover }) => {
+  const navigate = useNavigate()
   const settings = {
     dots: true,
     infinite: false,
@@ -38,7 +40,14 @@ const SingleMovie = ({ movieCover }) => {
     <Slider {...settings}>
       {movieCover.map((movie) => (
         <div key={movie.imdbID} className="text-center">
-          <img src={movie.Poster} alt={movie.Title} className="movieCover" />
+          <img
+            src={movie.Poster}
+            alt={movie.Title}
+            className="movieCover"
+            onClick={() => {
+              navigate(`/MovieDetails/` + movie.imdbID)
+            }}
+          />
         </div>
       ))}
     </Slider>

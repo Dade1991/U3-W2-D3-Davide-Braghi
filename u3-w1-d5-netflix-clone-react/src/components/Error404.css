@@ -1,0 +1,9 @@
+.error-404-message {
+  color: red !important;
+  font-size: 4em;
+}
+
+.error-404-HomepageLink {
+  color: white !important;
+  font-size: 2em;
+}
