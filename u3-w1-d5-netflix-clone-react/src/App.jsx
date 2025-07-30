@@ -2,22 +2,26 @@ import "./App.css"
 import "./components/CustomNavBar.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./components/SingleMovie.css"
+import "./components/TvShows.css"
 import CustomNavBar from "./components/CustomNavBar"
+import Homepage from "./components/Homepage"
 import MainMenu from "./components/MainMenu"
-import MovieCarouselFirst from "./components/MovieCarouselFirst"
-import MovieCarouselSecond from "./components/MovieCarouselSecond"
-import MovieCarouselThird from "./components/MovieCarouselThird"
 import CustomFooter from "./components/CustomFooter"
+import TvShows from "./components/TvShows"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
   return (
     <>
-      <CustomNavBar />
-      <MainMenu />
-      <MovieCarouselFirst />
-      <MovieCarouselSecond />
-      <MovieCarouselThird />
-      <CustomFooter />
+      <BrowserRouter>
+        <CustomNavBar />
+        <MainMenu />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/TvShows" element={<TvShows />} />
+        </Routes>
+        <CustomFooter />
+      </BrowserRouter>
     </>
   )
 }

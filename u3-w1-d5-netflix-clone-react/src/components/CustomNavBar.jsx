@@ -1,51 +1,97 @@
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
+import { Link, useLocation } from "react-router-dom"
 
 function CustomNavBar() {
+  const location = useLocation()
+  console.log(`location`, location)
+
   return (
     <Navbar expand="lg" className="bg-dark">
       <Container>
-        <Navbar.Brand href="#">
+        <Link to="/">
           <img
             src="asset/logo.png"
             alt="Netflix Logo"
             className="netflixLogo"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto w-100 d-flex justify-content-between align-items-center">
             <div className="d-flex flex-row">
-              <Nav.Link href="#" className="fw-bold text-light">
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light ms-3" +
+                  (location.pathname === `/` ? `active` : ``)
+                }
+                to="/"
+              >
                 Home
-              </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              </Link>
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light ms-3" +
+                  (location.pathname === `/TvShows` ? `active` : ``)
+                }
+                to="TvShows"
+              >
                 TV Shows
-              </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              </Link>
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light ms-3" +
+                  (location.pathname === `/Movies` ? `active` : ``)
+                }
+                to="/Movies"
+              >
                 Movies
-              </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              </Link>
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light ms-3" +
+                  (location.pathname === `/RecentlyAdded` ? `active` : ``)
+                }
+                to="/RecentlyAdded"
+              >
                 Recently Added
-              </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              </Link>
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light ms-3" +
+                  (location.pathname === `/My List` ? `active` : ``)
+                }
+                to="MyList"
+              >
                 My List
-              </Nav.Link>
+              </Link>
             </div>
             <div className="d-flex flex-row">
-              <Nav.Link href="#" className="fw-bold text-light">
+              <Nav.Link href="#" className="fw-bold text-light me-2">
                 <i className="bi bi-search"></i>
               </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light my-auto me-2" +
+                  (location.pathname === `/KIDS` ? `active` : ``)
+                }
+                to="/KIDS"
+              >
                 KIDS
-              </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              </Link>
+              <Nav.Link href="#" className="fw-bold text-light me-2">
                 <i className="bi bi-bell"></i>
               </Nav.Link>
-              <Nav.Link href="#" className="fw-bold text-light">
+              <Link
+                className={
+                  "text-decoration-none fw-bold text-light my-auto" +
+                  (location.pathname === `/User` ? `active` : ``)
+                }
+                to="User"
+              >
                 <i className="bi bi-person-circle"></i>
-              </Nav.Link>
+              </Link>
             </div>
           </Nav>
         </Navbar.Collapse>
