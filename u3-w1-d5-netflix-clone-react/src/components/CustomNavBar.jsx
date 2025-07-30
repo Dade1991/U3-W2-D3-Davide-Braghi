@@ -24,7 +24,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light ms-3" +
-                  (location.pathname === `/` ? `active` : ``)
+                  (location.pathname === `/` ? ` active` : ``)
                 }
                 to="/"
               >
@@ -33,7 +33,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light ms-3" +
-                  (location.pathname === `/TvShows` ? `active` : ``)
+                  (location.pathname === `/TvShows` ? ` active` : ``)
                 }
                 to="TvShows"
               >
@@ -42,7 +42,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light ms-3" +
-                  (location.pathname === `/Movies` ? `active` : ``)
+                  (location.pathname === `/Movies` ? ` active` : ``)
                 }
                 to="/Movies"
               >
@@ -51,7 +51,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light ms-3" +
-                  (location.pathname === `/RecentlyAdded` ? `active` : ``)
+                  (location.pathname === `/RecentlyAdded` ? ` active` : ``)
                 }
                 to="/RecentlyAdded"
               >
@@ -60,7 +60,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light ms-3" +
-                  (location.pathname === `/My List` ? `active` : ``)
+                  (location.pathname === `/My List` ? ` active` : ``)
                 }
                 to="MyList"
               >
@@ -74,7 +74,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light my-auto me-2" +
-                  (location.pathname === `/KIDS` ? `active` : ``)
+                  (location.pathname === `/KIDS` ? ` active` : ``)
                 }
                 to="/KIDS"
               >
@@ -86,7 +86,7 @@ function CustomNavBar() {
               <Link
                 className={
                   "text-decoration-none fw-bold text-light my-auto" +
-                  (location.pathname === `/User` ? `active` : ``)
+                  (location.pathname === `/User` ? ` active` : ``)
                 }
                 to="User"
               >
