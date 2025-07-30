@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 
 const MovieDetails = () => {
   const { imdbID } = useParams()
@@ -13,8 +13,11 @@ const MovieDetails = () => {
   useEffect(() => {
     fetch(movieAPI)
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch movie details")
-        return res.json()
+        if (res.ok) {
+          return res.json()
+        } else {
+          throw new Error("Failed to fetch movie details")
+        }
       })
       .then((data) => {
         setMovie(data)
@@ -30,8 +33,11 @@ const MovieDetails = () => {
       },
     })
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch reviews")
-        return res.json()
+        if (res.ok) {
+          return res.json()
+        } else {
+          throw new Error("Failed to fetch reviews")
+        }
       })
       .then((data) => {
         setReviews(data)
