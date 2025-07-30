@@ -6,7 +6,7 @@ const Error404 = () => {
     <Container>
       <Row className="justify-content-center mt-3">
         <Col className="text-center">
-          <h3 className="error-404-message">404 - Not Found</h3>
+          <h3 className="error-404-message mb-5">404 - Not Found =(</h3>
           <Link to="/" className="text-decoration-none fw-bold">
             <p className="error-404-HomepageLink">Return to HOMEPAGE</p>
           </Link>
