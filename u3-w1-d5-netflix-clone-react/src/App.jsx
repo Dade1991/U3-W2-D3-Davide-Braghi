@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/TvShows" element={<TvShows />} />
-          <Route path="/MovieDetails/:movieid" element={<MovieDetails />} />
+          <Route path="/MovieDetails/:movieId" element={<MovieDetails />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
         <CustomFooter />
